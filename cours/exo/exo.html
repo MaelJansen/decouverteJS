@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours - Js</title>
+    <script type="application/javascript" language="javascript">
+
+        start=function(){
+            console.log("test")
+        }
+
+    </script>
+    <script src="exo.js" defer></script>
+</head>
+<body onload="start();creerSommaire()">
+    <h1>Liens</h1>
+    <div>
+        <a id="premier" href="#" onClick="modifcolorLien()" style="width: fit-content">Premier lien</a>
+    </div>
+    <div>
+        <a id="second" href="#" onClick="modifLien()" style="">Second lien</a>
+    </div>
+    <h1>Calculatrice</h1>
+    <input type="number" id="nombre1" value=0>
+    <select id="op" name="select" >
+        <option value="0" selected="selected">Choose an operator</option>
+        <option value="1" >+</option>
+        <option value="2">-</option>
+    </select>
+    <input type="number" id="nombre2" value=0>
+    <p id="resultat"> </p>
+    <script type="text/javascript">  
+        document.getElementById("op").addEventListener('change', function() {
+            var operator = document.getElementById("op");
+            var res = document.getElementById("resultat");
+            if(operator.value == "1"){
+                let valUn = parseInt(document.getElementById("nombre1").value);
+                let valDeux = parseInt(document.getElementById("nombre2").value);
+                res.textContent = valUn + valDeux; 
+            } else if (operator.value == "2"){
+                let valUn = parseInt(document.getElementById("nombre1").value);
+                let valDeux = parseInt(document.getElementById("nombre2").value);
+                res.textContent = valUn - valDeux; 
+            }   
+         });
+     </script>
+    <h1>Création de Sommaires</h1>
+    <div id="sommaire" style="display: flex; flex-direction: column;"></div>
+    <div>
+        <h1 id="titre1" class="titreSommaire" style="font-size: medium;">titre 1</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+        <h1 id="titre2" class="titreSommaire" style="font-size: medium;">titre 2</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+        <h1 id="titre3" class="titreSommaire" style="font-size: medium;">titre 3</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+        <h1 id="titre4" class="titreSommaire" style="font-size: medium;">titre 4</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+        <h1 id="titre5" class="titreSommaire" style="font-size: medium;">titre 5</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+        <h1 id="titre6" class="titreSommaire" style="font-size: medium;">titre 6</h1>
+        <p>
+
+            Lorem ipsum dolor sit amet. Qui maiores unde rem illo voluptas id quaerat tenetur aut labore fugit non explicabo illo. Rem quos quae quo nemo harum id deleniti nihil. Quo consequuntur soluta et labore vitae et nobis quaerat.
+            
+            Ea Quis consequatur ut architecto minus et voluptatem porro qui harum quisquam vel repudiandae minima. Sit quas nesciunt non beatae consequatur sit nihil sunt est eaque eius est mollitia veritatis. Aut omnis soluta a dolore magnam eum molestiae natus ad voluptas culpa nam velit sunt aut dolorem ipsum ea soluta ullam.
+            
+            Ut possimus minus eum dignissimos repellat est enim unde sed odio voluptas qui amet rerum eum voluptas maxime et nemo facere. Id inventore officiis sit quibusdam necessitatibus aut voluptatum maxime et earum autem sit commodi minima cum aperiam ducimus. Hic adipisci repudiandae sit earum nesciunt At ducimus similique. Qui porro maxime aut provident veritatis et facere adipisci non quidem rerum a repudiandae possimus eos quia corporis qui quisquam numquam!
+        
+        </p>
+    </div>
+    <h1>Utilisateurs</h1>
+    <style type="text/css"> span { color: blue; } .italique { font-style: italic; color: blue; }</style>
+  
+
+  <h1 style="font-size: large;"> Liste d'utilisateurs </h1> 
+  
+  <ul id="donnees">
+
+  </ul>
+  
+  <h1 style="font-size: large;">Ajout d'un individu</h1>
+  <div>
+    <label>Nom</label><input id="nom" type="text" name="nom">
+    <label>Prénom</label><input  id="prenom" type="text" name="prenom">
+    <button id="add" onclick="ajouterPersonne()">Add</button>
+  </div>
+  <div style="margin-top: 30px;">
+    <label>Nom à effacer</label>
+    <select id="nomDel" style="width:100px;">
+    </select>
+    <button id="del">del</button>
+  </div>
+
+  <script type="text/javascript"> 
+
+    var userMap=new Map();
+
+
+    </script> 
+</body>
+</html>
