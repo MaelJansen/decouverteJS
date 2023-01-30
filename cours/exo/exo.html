@@ -139,5 +139,51 @@
 
 
     </script> 
+
+    <h1>Drapeaux</h1>
+    <div>
+        
+    <div style="background-color: cornflowerblue;">
+        <div id="drapeau" style="border-style: dashed;">
+            <p id="contentDrapeau">Bienvenue. Passez la souris sur l'un des deux liens !</p>
+        </div>
+    </div>
+    <div class="lienDrapeau">
+        <a href="#" id="drapeauEn" onmouseover="drapeauEnFunction()">English</a>
+        <a href="#" id="drapeauFr" onmouseover="drapeauFrFunction()">Français</a>
+    </div>
+    </div>
+    <script>
+        function drapeauEnFunction(){
+            var div = document.getElementById("drapeau");
+            var contenu = document.getElementById("contentDrapeau");
+            var imgdrapeau = document.getElementsByClassName("imgDrapeau");
+            var x;
+            for (x of imgdrapeau){
+                x;remove()
+            }
+            var img = document.createElement("img");
+            img.setAttribute("class", "imgDrapeauEn");
+            img.setAttribute("src", "./img/drapeauEn.png");
+            div.appendChild(img);
+
+            contenu.remove();
+        }
+        function drapeauFrFunction(){
+            var div = document.getElementById("drapeau");
+            var contenu = document.getElementById("contentDrapeau");
+            var imgdrapeau = document.getElementsByClassName("imgDrapeau");
+            var x;
+            for (x of imgdrapeau){
+                x;remove()
+            }
+            var img = document.createElement("img");
+            img.setAttribute("class", "imgDrapeau");
+            img.setAttribute("src", "./img/drapeauFr.jpg");
+            div.appendChild(img);
+
+            contenu.remove();
+        }
+    </script>
 </body>
 </html>
