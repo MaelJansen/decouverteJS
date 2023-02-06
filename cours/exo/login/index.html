@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login-search</title>
+</head>
+<body>
+    <form>
+        <input type="text">
+        <input type="button" onClick="recherche()" value="search">
+    </form>
+    <p id="par"></p>
+    <script>
+        function recherche(){
+            const request = new Request('script.php')
+            fetch(request)
+            .then((response) => response)
+            .then((data) => {
+                if (data == 0){
+                    var p = document.getElementById("par");
+                    p.innerHTML = "le login est deja pris"
+                } else {
+                    var p = document.getElementById("par");
+                    p.innerHTML = "Ce login est disponible"
+                }
+            })
+        }
+    </script>
+</body>
+</html>
