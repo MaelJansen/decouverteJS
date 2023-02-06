@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Planches � gogo</title>
+  <link rel="stylesheet" type="text/css" href="planches.css" />
+</head>
+
+<body onload="prixDeVente()">
+  <h1>Planches � gogo :: Tableau de bord</h1>
+  <div id="planches">
+   <table width="50%"><br/>
+    <tr><th></th><td>quantit� vendue</td><td>prix de vente</td><td>Prix achat</td></tr>
+    
+    <tr class="lacanau p"><th>Planche mod�le Lacanau</th>
+     <td>0</td><td>0</td><td>0</td></tr>
+
+     <tr class="biarritz p"><th>Planche mod�le Biarritz</th>
+       <td>0</td><td>0</td><td>0</td></tr>
+
+       <tr class="nice p"><th>Planche mod�le  Nice</th>
+         <td>0</td><td>0</td><td>0</td></tr>
+       </table><br/>
+       <h2>B�n�fice net : 
+        <span id="benef">0</span> �</h2>
+
+        <select id="typePlanche">
+          <option value="lacanau" selected="selected">Lacanau</option>
+          <option value="biarritz">Biarritz</option>
+          <option value="nice">Nice</option>
+          <option value="toutes">Toutes</option>
+        </select>
+        <button onClick="getPlanchesVendues();">
+         Actualiser
+       </button>        
+
+    <script>
+      function prixDeVente(){
+        const myRequest =  new Request('./planches.json')
+        fetch(myRequest)
+        .then((response) => response.json())
+        .then((data) =>{
+          for (const v of data){
+            var model = document.getElementsByClassName(v.modele)[0]
+            if (model != null){
+              model.children[2].innerHTML = v.prixDeVente
+              model.children[3].innerHTML = v.prixAchat
+            }
+          }
+        })
+
+      }
+
+      function getPlanchesVendues(){
+        var tabs = document.getElementsByClassName("p")
+        for (const i of tabs){
+          i.children[1].innerHTML = 0
+        }
+        var rand = Math.floor(Math.random() * 250)
+        var selection = document.getElementById("typePlanche").value;
+        const myRequest = new Request('./planches.json');
+        fetch(myRequest)
+        .then((response) => response.json())
+        .then((data) => {
+          for  (const v of data){
+            if (v.modele == selection){
+              var model = document.getElementsByClassName(v.modele)[0]
+              model.children[1].innerHTML = rand
+              var benef = document.getElementById("benef")
+              benef.innerHTML = parseInt(benef.innerHTML) + rand * (v.prixDeVente - v.prixAchat)
+            }
+            if (selection == "toutes"){
+              rand = Math.floor(Math.random()*250)
+              var model = document.getElementsByClassName(v.modele)[0]
+              model.children[1].innerHTML = rand
+              var benef = document.getElementById("benef")
+              benef.innerHTML = parseInt(benef.innerHTML) + rand * (v.prixDeVente - v.prixAchat)
+            }
+          }
+        })
+      }
+
+    </script>
+
+     </div>
+ </body>
+ </html>
